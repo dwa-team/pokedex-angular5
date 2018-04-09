@@ -1,0 +1,12 @@
+
+<h3>{{ titleComicsComponents }}</h3>
+
+<button (click)="myEvent($event)"> Button </button>
+
+<ul *ngFor="let comic of comics; let i = index">
+  <li>{{i}}</li>
+  <li>{{comic.nombre}}</li>
+  <li>{{comic.fechaPublicacion}}</li>
+  <li>{{comic.editorial}}</li>
+  <li>{{comic.isok}}</li>
+</ul>
