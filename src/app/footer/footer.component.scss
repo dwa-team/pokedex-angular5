@@ -1,0 +1,59 @@
+@import "../../styles/general/colors";
+@import "../../styles/general/variables";
+
+
+footer.footerCont {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: $gray-light;
+    width: 100%;
+
+    ul {
+        list-style: none;
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        max-width: 600px;
+        margin: 20px auto 0;
+        text-align: center;
+        padding: 0;
+
+        li:nth-child(1) {
+            background: transparent;
+            div p {
+                color: $black;
+            }
+            &:hover{
+                background: transparent;
+                cursor: auto;
+            }
+        }
+
+        li {
+            .othersTxt {
+                color: $white;
+            }
+            &:hover {
+                background: $green-dark;
+                cursor: pointer;
+            }
+            vertical-align: top;
+            height: 60px;
+            width: 60px;
+            border-radius: 11px;
+            background: $green;
+            display: inline-block;
+            margin: 10px;
+        }
+    }
+    
+    @media screen and ( max-width:$screen-560 ) {
+        position: relative;
+        ul {
+            li:nth-child(1) {
+                width: 100%;
+            }
+        }
+    }
+}

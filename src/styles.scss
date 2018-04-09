@@ -1,8 +1,4 @@
 
-
-body {
-    h1.indexTitle {
-        color: white;
-        background: blue;
-    }
-}
+@import "styles/general/reset_estilos";
+@import "styles/general/normalize";
+@import "styles/general/fuentes";
