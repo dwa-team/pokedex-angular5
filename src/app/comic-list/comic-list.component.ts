@@ -29,6 +29,17 @@ export class ComicListComponent implements OnInit {
   }
 
   ngOnInit() {
+    
+    // Diferenciando let y var
+    let uno = 1;
+    var dos = 3;
+
+    if(uno === 1) {
+      let uno = 67;
+      console.log("DENTRO DEL IF " +  uno);
+    }
+
+    console.log("FUERA DEL IF " + uno);
   }
 
 }

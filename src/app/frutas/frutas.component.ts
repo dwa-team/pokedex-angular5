@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrutasComponent implements OnInit {
 
-  constructor() { }
+  public title:string;
+  public year:number;
+  public myArray:Array<any>;
+  
+  
+  constructor() {
+    // Asignando valores de propiedades
+    this.title = "FRUTAS COMPONENT";
+    this.year = 12;
+    this.myArray = [1, "xcx", true];
+  }
 
   ngOnInit() {
+    // Métodos
+    this.imprimir(this.title);
+  }
+
+  imprimir(text) {
+    console.log(text);
   }
 
 }
