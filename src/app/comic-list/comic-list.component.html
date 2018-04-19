@@ -1,15 +1,46 @@
 
 <h3>{{ titleComicsComponents }}</h3>
 
-<button (click)="myEvent($event)"> Button </button>
+<hr>
+<h3>Two way data binding</h3>
+<input type="text" [(ngModel)]="color_seleccionado" >
+<div [ngStyle]="{
+  'background': color_seleccionado,
+  'height': '50px',
+  'width': '50px'
+}"></div>
+<button (click)="imprimirColorSelec()">Imprimir en consola color actual</button>
 
+<hr>
+<h3>ngSwitch</h3>
+<ul [ngSwitch]="color">
+  <li *ngSwitchCase="'red'" [ngStyle]="{color:color}">Es de color rojo</li>
+  <li *ngSwitchCase="'blue'" [ngStyle]="{color:color}">Es de color azul</li>
+  <li *ngSwitchCase="'green'" [ngStyle]="{color:color}">Es de color verde</li>
+</ul>
+
+
+<hr>
+<h3>Comics list: ngFor, ngIf, data binding, event</h3>
 <ul>
   <li *ngFor="let comic of comics; let i = index">
     <div>{{i}} - {{comic.nombre}}</div>
-    <div>{{comic.fechaPublicacion}}</div>
-    <div>{{comic.editorial}}</div>
-    <div>{{comic.isok}}</div>
+    <div>{{comic.editorial}}, {{comic.fechaPublicacion}} </div>
+    <div *ngIf="comic.isok == true"> <b>Está disponible</b></div>
+    <div *ngIf="comic.isok == false"> <b>Nanai</b></div>
+    <div>{{comic.likes}} Likes</div>
+    <button (click)="gestionarLike(i, true)">:)</button>
+    <button (click)="gestionarLike(i, false)">:(</button>
+    <br>
   </li>
 </ul>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
