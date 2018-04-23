@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ComicElement } from './comic-list';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-comic-list',
@@ -11,17 +12,20 @@ export class ComicListComponent implements OnInit {
 
   public titleComicsComponents = "Componente de Lista de comics";
   public comics:Array<ComicElement>;
-  public color:string;
+  public myColor:string;
   public color_seleccionado:string;
 
-  constructor() { 
+  constructor( 
+    private _route: ActivatedRoute,
+    private _router: Router
+  ) { 
     this.comics = [
       new ComicElement('IronMan', 1992, 'Marvel', 0, true),
       new ComicElement('SpiderMan', 1994, 'Marvel', 0, false),
       new ComicElement('Batman', 1942, 'DC', 0, true),
       new ComicElement('ChapulinColorado', 1991, 'Marvel', 0, false), 
     ] 
-    this.color = 'green';
+    this.myColor = 'green';
     this.color_seleccionado = 'peru';
   }
 

@@ -1,3 +1,39 @@
-<p>
-  home works!
-</p>
+<h3>
+  Home component!
+</h3>
+
+<hr>
+
+<p>*En la vista de <strong>comics</strong> se encuentran las diferentes directivas y funcionalidades como: ngSwitch, ngIf, ngFor, ngClass, entre otras.</p>
+<button (click)="irAComics()">
+  Ir a la vista de comics
+</button>
+
+<hr>
+<h3>
+  Services
+</h3>
+
+<input type="text" [(ngModel)]="prenda_a_guardar"> 
+<button (click)="guardarPrenda()">Agregar prenda</button>
+<p *ngIf="prenda_a_guardar">La prenda a guardar es: <strong> {{ prenda_a_guardar }} </strong></p>
+
+<p>Lista de prendas:</p>
+<ul>
+  <li *ngFor="let prenda of listado_ropa; let i = index">
+    {{ prenda }}
+    <button (click)="eliminarPrenda(i)">Eliminar</button>
+    <br>
+  </li>
+</ul>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- {{ }} -->

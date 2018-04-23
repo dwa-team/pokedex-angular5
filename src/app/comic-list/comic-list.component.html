@@ -2,21 +2,33 @@
 <h3>{{ titleComicsComponents }}</h3>
 
 <hr>
-<h3>Two way data binding</h3>
+<h3>Two way data binding, ngStyle</h3>
 <input type="text" [(ngModel)]="color_seleccionado" >
 <div [ngStyle]="{
   'background': color_seleccionado,
-  'height': '50px',
-  'width': '50px'
+  'height': '24px',
+  'width': '50px',
+  'vertical-align': 'bottom',
+  'display': 'inline-block'
 }"></div>
 <button (click)="imprimirColorSelec()">Imprimir en consola color actual</button>
 
+<h3>ngCLass: Agregar clases de manera dinámica</h3>
+<p [ngClass]="{
+  fondoAzulClass: color_seleccionado == 'blue',
+  fondoVerdeClass: color_seleccionado == 'green'
+}">
+  Color seleccionado: {{color_seleccionado}}  
+  <br> 
+  *Si el color seleccionado es 'blue' o 'green' el fondo de este texto cambia. 
+</p>
+
 <hr>
 <h3>ngSwitch</h3>
-<ul [ngSwitch]="color">
-  <li *ngSwitchCase="'red'" [ngStyle]="{color:color}">Es de color rojo</li>
-  <li *ngSwitchCase="'blue'" [ngStyle]="{color:color}">Es de color azul</li>
-  <li *ngSwitchCase="'green'" [ngStyle]="{color:color}">Es de color verde</li>
+<ul [ngSwitch]="myColor">
+  <li *ngSwitchCase="'red'" [ngStyle]="{color:myColor}">Es de color rojo</li>
+  <li *ngSwitchCase="'blue'" [ngStyle]="{color:myColor}">Es de color azul</li>
+  <li *ngSwitchCase="'green'" [ngStyle]="{color:myColor}">Es de color verde</li>
 </ul>
 
 
