@@ -32,10 +32,10 @@ export class ComicListComponent implements OnInit {
 
     if(uno === 1) {
       let uno = 67;
-      console.log("DENTRO DEL IF " +  uno);
+      // var uno = 67;
+      // console.log("DENTRO DEL IF " +  uno);
     }
-
-    console.log("FUERA DEL IF " + uno);
+    // console.log("FUERA DEL IF " + uno);
   }
 
   myEvent(event){
