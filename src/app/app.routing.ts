@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 const appRoutes: Routes = [
     { path:'', component:HomeComponent },
     { path:'comics', component:ComicListComponent },
+    { path:'comics/:ident', component:ComicListComponent },
     { path:'frutas', component:FrutasComponent },
     { path:'home', component:HomeComponent }
     // { path:'**', component:FrutasComponent }

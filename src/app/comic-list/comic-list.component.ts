@@ -14,6 +14,7 @@ export class ComicListComponent implements OnInit {
   public comics:Array<ComicElement>;
   public myColor:string;
   public color_seleccionado:string;
+  public parametro: string;
 
   constructor( 
     private _route: ActivatedRoute,
@@ -30,16 +31,9 @@ export class ComicListComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Diferenciando let y var
-    let uno = 1;
-    var dos = 3;
-
-    if(uno === 1) {
-      let uno = 67;
-      // var uno = 67;
-      // console.log("DENTRO DEL IF " +  uno);
-    }
-    // console.log("FUERA DEL IF " + uno);
+    this._route.params.forEach((params:Params) => {
+      this.parametro = params['ident'];
+    });
   }
 
   myEvent(event){
@@ -59,5 +53,12 @@ export class ComicListComponent implements OnInit {
     console.log(this.color_seleccionado);
   }
  
+  verDetalles(_index) {
+    this._router.navigate(['/comics/'+_index]);
+  }
+
+  volerAtras() {
+    this._router.navigate(['/comics']);
+  }
 
 }

@@ -1,51 +1,66 @@
 
 <h3>{{ titleComicsComponents }}</h3>
 
-<hr>
-<h3>Two way data binding, ngStyle</h3>
-<input type="text" [(ngModel)]="color_seleccionado" >
-<div [ngStyle]="{
-  'background': color_seleccionado,
-  'height': '24px',
-  'width': '50px',
-  'vertical-align': 'bottom',
-  'display': 'inline-block'
-}"></div>
-<button (click)="imprimirColorSelec()">Imprimir en consola color actual</button>
+<div *ngIf="parametro">
+  <button (click)="volerAtras()">Atrás</button>
+  <p>Parámetro de la url: {{parametro}}</p>
+  <ul>
+      <li>
+        <div>{{parametro}} - {{comics[parametro].nombre}}</div>
+        <div>{{comics[parametro].editorial}}, {{comics[parametro].fechaPublicacion}} </div>
+        <div *ngIf="comics[parametro].isok == true"> <b>Está disponible</b></div>
+        <div *ngIf="comics[parametro].isok == false"> <b>Nanai</b></div>
+        <div>{{comics[parametro].likes}} Likes</div>
+        <button (click)="gestionarLike(parametro, true)">:)</button>
+        <button (click)="gestionarLike(parametro, false)">:(</button>
+        <br>
+      </li>
+    </ul>
+</div>
 
-<h3>ngCLass: Agregar clases de manera dinámica</h3>
-<p [ngClass]="{
-  fondoAzulClass: color_seleccionado == 'blue',
-  fondoVerdeClass: color_seleccionado == 'green'
-}">
-  Color seleccionado: {{color_seleccionado}}  
-  <br> 
-  *Si el color seleccionado es 'blue' o 'green' el fondo de este texto cambia. 
-</p>
+<div *ngIf="!parametro">
+  <hr>
+  <h3>Comics list: ngFor, ngIf, data binding, event</h3>
+  <ul>
+    <li *ngFor="let comic of comics; let i = index">
+      <div>{{i}} - {{comic.nombre}}</div>
+      <button (click)="verDetalles(i)"> Ver detalles</button>
+      <br>
+      <br>
+    </li>
+  </ul>
 
-<hr>
-<h3>ngSwitch</h3>
-<ul [ngSwitch]="myColor">
-  <li *ngSwitchCase="'red'" [ngStyle]="{color:myColor}">Es de color rojo</li>
-  <li *ngSwitchCase="'blue'" [ngStyle]="{color:myColor}">Es de color azul</li>
-  <li *ngSwitchCase="'green'" [ngStyle]="{color:myColor}">Es de color verde</li>
-</ul>
+  <hr>
+  <h3>Two way data binding, ngStyle</h3>
+  <input type="text" [(ngModel)]="color_seleccionado" >
+  <div [ngStyle]="{
+    'background': color_seleccionado,
+    'height': '24px',
+    'width': '50px',
+    'vertical-align': 'bottom',
+    'display': 'inline-block'
+  }"></div>
+  <button (click)="imprimirColorSelec()">Imprimir en consola color actual</button>
+  
+  <h3>ngCLass: Agregar clases de manera dinámica</h3>
+  <p [ngClass]="{
+    fondoAzulClass: color_seleccionado == 'blue',
+    fondoVerdeClass: color_seleccionado == 'green'
+  }">
+    Color seleccionado: {{color_seleccionado}}  
+    <br> 
+    *Si el color seleccionado es 'blue' o 'green' el fondo de este texto cambia. 
+  </p>
+  
+  <hr>
+  <h3>ngSwitch</h3>
+  <ul [ngSwitch]="myColor">
+    <li *ngSwitchCase="'red'" [ngStyle]="{color:myColor}">Es de color rojo</li>
+    <li *ngSwitchCase="'blue'" [ngStyle]="{color:myColor}">Es de color azul</li>
+    <li *ngSwitchCase="'green'" [ngStyle]="{color:myColor}">Es de color verde</li>
+  </ul>
+</div>
 
-
-<hr>
-<h3>Comics list: ngFor, ngIf, data binding, event</h3>
-<ul>
-  <li *ngFor="let comic of comics; let i = index">
-    <div>{{i}} - {{comic.nombre}}</div>
-    <div>{{comic.editorial}}, {{comic.fechaPublicacion}} </div>
-    <div *ngIf="comic.isok == true"> <b>Está disponible</b></div>
-    <div *ngIf="comic.isok == false"> <b>Nanai</b></div>
-    <div>{{comic.likes}} Likes</div>
-    <button (click)="gestionarLike(i, true)">:)</button>
-    <button (click)="gestionarLike(i, false)">:(</button>
-    <br>
-  </li>
-</ul>
 
 <br>
 <br>

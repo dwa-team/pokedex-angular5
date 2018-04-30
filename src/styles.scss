@@ -3,6 +3,10 @@
 @import "styles/general/normalize";
 @import "styles/general/fuentes";
 
+body {
+    width: 90%;
+    margin: 0 auto;
+}
 
 .classActive {
     border-bottom: 5px solid black;
