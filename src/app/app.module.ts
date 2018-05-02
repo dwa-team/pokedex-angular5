@@ -9,7 +9,8 @@ import { FrutasComponent } from './frutas/frutas.component';
 import { ComicListComponent } from './comic-list/comic-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-
+import { MultiplyPipe } from './pipes/multiply.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,8 @@ import { HomeComponent } from './home/home.component';
     ComicListComponent,
     FooterComponent,
     HomeComponent,
+    MultiplyPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

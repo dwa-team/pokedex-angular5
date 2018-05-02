@@ -1,9 +1,10 @@
 export class ComicElement {
     constructor(
         public nombre:string,
-        public fechaPublicacion:number,
+        public fechaPublicacion:Date,
         public editorial:string,
         public likes:number, 
-        public isok:boolean
+        public isok:boolean,
+        public id:number
     ){}
 }

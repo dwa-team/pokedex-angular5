@@ -7,12 +7,14 @@
   <ul>
       <li>
         <div>{{parametro}} - {{comics[parametro].nombre}}</div>
-        <div>{{comics[parametro].editorial}}, {{comics[parametro].fechaPublicacion}} </div>
+        <div>{{comics[parametro].editorial | uppercase }}</div>
+        <div>Fecha de publicación: {{comics[parametro].fechaPublicacion | date:'dd/MM/yyyy' }} </div>
         <div *ngIf="comics[parametro].isok == true"> <b>Está disponible</b></div>
         <div *ngIf="comics[parametro].isok == false"> <b>Nanai</b></div>
         <div>{{comics[parametro].likes}} Likes</div>
         <button (click)="gestionarLike(parametro, true)">:)</button>
         <button (click)="gestionarLike(parametro, false)">:(</button>
+        <div> {{ 5 | multiply: 17 }} </div>
         <br>
       </li>
     </ul>
@@ -21,10 +23,12 @@
 <div *ngIf="!parametro">
   <hr>
   <h3>Comics list: ngFor, ngIf, data binding, event</h3>
+  Search: <input type="text" [(ngModel)]="filterText">
   <ul>
-    <li *ngFor="let comic of comics; let i = index">
+    <li *ngFor="let comic of comics | filter:filterText; let i = index; ">
       <div>{{i}} - {{comic.nombre}}</div>
-      <button (click)="verDetalles(i)"> Ver detalles</button>
+      <div>Comic ID: {{comic.id}}</div>
+      <button (click)="verDetalles(comic.id)"> Ver detalles</button>
       <br>
       <br>
     </li>

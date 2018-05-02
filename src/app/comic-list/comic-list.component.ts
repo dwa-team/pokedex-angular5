@@ -21,10 +21,10 @@ export class ComicListComponent implements OnInit {
     private _router: Router
   ) { 
     this.comics = [
-      new ComicElement('IronMan', 1992, 'Marvel', 0, true),
-      new ComicElement('SpiderMan', 1994, 'Marvel', 0, false),
-      new ComicElement('Batman', 1942, 'DC', 0, true),
-      new ComicElement('ChapulinColorado', 1991, 'Marvel', 0, false), 
+      new ComicElement('IronMan', new Date(1995, 0, 4), 'Marvel', 0, true, 0),
+      new ComicElement('SpiderMan', new Date(1815, 2, 2), 'Marvel', 0, false, 1),
+      new ComicElement('Batman', new Date(1125, 2, 5), 'DC', 0, true, 2),
+      new ComicElement('ChapulinColorado', new Date(1892, 2, 3), 'Marvel', 0, false, 3) 
     ] 
     this.myColor = 'green';
     this.color_seleccionado = 'peru';
