@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { MultiplyPipe } from './pipes/multiply.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { FormularyComponent } from './formulary/formulary.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     FooterComponent,
     HomeComponent,
     MultiplyPipe,
-    FilterPipe
+    FilterPipe,
+    FormularyComponent
   ],
   imports: [
     BrowserModule,

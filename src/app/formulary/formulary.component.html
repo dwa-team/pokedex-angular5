@@ -1,0 +1,38 @@
+<h1>
+  formulary works!
+</h1>
+
+<form #formCarro="ngForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label> Nombre:</label>
+    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="carro.nombre" required >
+    <span *ngIf="nombre.touched && !nombre.valid">
+      Parce, este nombre está malo
+    </span>
+  </p>
+  <p>
+    <label >HP</label>
+    <input type="text" name="hp" #hp="ngModel" [(ngModel)]="carro.hp" pattern="[0-9]+">
+     <span *ngIf="hp.touched && !hp.valid">
+        Volvete serio men
+      </span>
+  </p>
+  <p>
+    <label >Color</label>
+    <input type="text" name="color" #color="ngModel" [(ngModel)]="carro.color" pattern="[#a-zA-Z0-9]+">
+    <span *ngIf="color.touched && !color.valid">
+        Cancele
+      </span>
+  </p>
+  <input type="submit" value="Guardar" [disabled]="!formCarro.form.valid">
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
