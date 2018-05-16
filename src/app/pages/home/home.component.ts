@@ -1,13 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { RopaService } from '../../services/ropa.service'
-import { PeticionService } from '../../services/peticion.service'
+import { RopaService } from '../../services/ropa.service';
+import { PeticionService } from '../../services/peticion.service';
+import { fade } from "../../animations/animations";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'], 
-  providers: [RopaService, PeticionService]
+  providers: [RopaService, PeticionService],
+  animations: [
+    fade
+  ]
+
+/*
+
+  animations: [
+
+    trigger('fade', [
+
+      transition('void =>*', [
+        style({ opacity: 0}),
+        animate(1500)
+      ]),
+
+      transition('* =>void', [
+        animate(1000, style({ opacity: 0}))
+      ])
+
+    ])
+  ]
+
+*/
+
+
 })
 export class HomeComponent implements OnInit {
 

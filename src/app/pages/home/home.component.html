@@ -20,7 +20,7 @@
 
 <p>Lista de prendas:</p>
 <ul>
-  <li *ngFor="let prenda of listado_ropa; let i = index">
+  <li @fade *ngFor="let prenda of listado_ropa; let i = index">
     {{ prenda }}
     <button (click)="eliminarPrenda(i)">Eliminar</button>
     <br>
