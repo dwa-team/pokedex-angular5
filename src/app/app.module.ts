@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { routing, appRoutingProviders } from './app.routing';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from './app.component';
 import { FrutasComponent } from './frutas/frutas.component';
@@ -28,7 +29,8 @@ import { FormularyComponent } from './formulary/formulary.component';
     BrowserModule,
     FormsModule,
     routing, 
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
