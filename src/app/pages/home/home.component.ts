@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { RopaService } from '../services/ropa.service'
-import { PeticionService } from '../services/peticion.service'
+import { RopaService } from '../../services/ropa.service'
+import { PeticionService } from '../../services/peticion.service'
 
 @Component({
   selector: 'app-home',

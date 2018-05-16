@@ -6,18 +6,16 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from './app.component';
-import { FrutasComponent } from './frutas/frutas.component';
-import { ComicListComponent } from './comic-list/comic-list.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
+import { ComicListComponent } from './pages/comic-list/comic-list.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './pages/home/home.component';
 import { MultiplyPipe } from './pipes/multiply.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
-import { FormularyComponent } from './formulary/formulary.component';
+import { FormularyComponent } from './pages/formulary/formulary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FrutasComponent,
     ComicListComponent,
     FooterComponent,
     HomeComponent,
