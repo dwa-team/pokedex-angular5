@@ -1,16 +1,14 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ComicListComponent } from './comic-list/comic-list.component';
-import { FrutasComponent } from './frutas/frutas.component';
-import { HomeComponent } from './home/home.component';
-import { FormularyComponent } from './formulary/formulary.component';
+import { ComicListComponent } from './pages/comic-list/comic-list.component';
+import { HomeComponent } from './pages/home/home.component';
+import { FormularyComponent } from './pages/formulary/formulary.component';
 
 const appRoutes: Routes = [
     { path:'', component:HomeComponent },
     { path:'comics', component:ComicListComponent },
     { path:'comics/:ident', component:ComicListComponent },
-    { path:'frutas', component:FrutasComponent },
     { path:'home', component:HomeComponent },
     { path:'form', component:FormularyComponent }
     // { path:'**', component:FrutasComponent }

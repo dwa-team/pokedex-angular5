@@ -1,7 +1,9 @@
-<h1>
+<h3>
   formulary works!
-</h1>
+</h3>
 
+<p> Cuando los campos estén correctos, se imprimen los valores del formulario en la consola al hacer clic en el botón Guardar: </p>
+<br>
 <form #formCarro="ngForm" (ngSubmit)="onSubmit()">
   <p>
     <label> Nombre:</label>
@@ -14,14 +16,14 @@
     <label >HP</label>
     <input type="text" name="hp" #hp="ngModel" [(ngModel)]="carro.hp" pattern="[0-9]+">
      <span *ngIf="hp.touched && !hp.valid">
-        Volvete serio men
+        Volvete serio men, tiene que ser un número
       </span>
   </p>
   <p>
     <label >Color</label>
     <input type="text" name="color" #color="ngModel" [(ngModel)]="carro.color" pattern="[#a-zA-Z0-9]+">
     <span *ngIf="color.touched && !color.valid">
-        Cancele
+        Cancele pues
       </span>
   </p>
   <input type="submit" value="Guardar" [disabled]="!formCarro.form.valid">

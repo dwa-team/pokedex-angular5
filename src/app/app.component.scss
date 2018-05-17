@@ -1,8 +1,30 @@
 @import "../styles/general/colors";
 
-h1 {
-    background: $green;
-    color: $white;
+.main-title-cont {
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0; 
+    h1 {
+        background: $black;
+        color: $white;
+        margin: 0;
+    }
 }
 
+* {
+    font-size: 13px;
+}
 
+nav a {
+    text-decoration: none;
+    &:focus {
+        outline: none;
+    }
+    &:active, &:visited {
+        color: black;
+    }
+}
+ 
+.classActive {
+    border-top: 3px solid black;
+}

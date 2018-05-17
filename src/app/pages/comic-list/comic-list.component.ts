@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ComicElement } from './comic-list';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { fade } from "../../animations/animations";
 
 @Component({
   selector: 'app-comic-list',
   templateUrl: './comic-list.component.html',
-  styleUrls: ['./comic-list.component.scss']
+  styleUrls: ['./comic-list.component.scss'],
+  animations: [ fade ]
 })
 
 export class ComicListComponent implements OnInit {
