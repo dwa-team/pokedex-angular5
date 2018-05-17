@@ -9,32 +9,9 @@ import { fade } from "../../animations/animations";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'], 
   providers: [RopaService, PeticionService],
-  animations: [
-    fade
-  ]
-
-/*
-
-  animations: [
-
-    trigger('fade', [
-
-      transition('void =>*', [
-        style({ opacity: 0}),
-        animate(1500)
-      ]),
-
-      transition('* =>void', [
-        animate(1000, style({ opacity: 0}))
-      ])
-
-    ])
-  ]
-
-*/
-
-
+  animations: [ fade ]
 })
+
 export class HomeComponent implements OnInit {
 
   public listado_ropa:Array<string>;

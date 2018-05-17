@@ -25,7 +25,7 @@
   <h3>Comics list: ngFor, ngIf, data binding, event</h3>
   Search: <input type="text" [(ngModel)]="filterText">
   <ul>
-    <li *ngFor="let comic of comics | filter:filterText; let i = index; ">
+    <li @fade *ngFor="let comic of comics | filter:filterText; let i = index; ">
       <div>{{i}} - {{comic.nombre}}</div>
       <div>Comic ID: {{comic.id}}</div>
       <button (click)="verDetalles(comic.id)"> Ver detalles</button>
